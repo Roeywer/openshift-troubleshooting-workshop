@@ -1,1 +1,0 @@
-# Openshift-Advance-Troubleshooting
