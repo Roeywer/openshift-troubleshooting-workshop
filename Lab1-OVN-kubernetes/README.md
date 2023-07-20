@@ -2,19 +2,19 @@
 
 ## Usage (CentOS 8)
 
-* Install podman
+* Install podmani:
 
 ```bash
 sudo dnf install --refresh podman -y
 ```
 
-* Load the openvswitch kernel module
+* Load the openvswitch kernel module:
 
 ```bash
 sudo modprobe openvswitch
 ```
 
-* Run the container as privileged
+* Run the container as privileged:
 
 ```bash
 sudo podman run -it --rm --privileged quay.io/dcbw/ovn-fun:2

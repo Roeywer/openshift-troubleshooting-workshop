@@ -62,4 +62,4 @@ oc apply -f curl-client.yaml
    - tls.key: should be mounted at /app/privkey.pem
 
 2. Modify the curl client to use the ca certficate to turst the https server
-Use curl command and manully point the certificate and test https communication 
+Use curl command and manully point the certificate and test https communication. 
