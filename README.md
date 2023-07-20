@@ -6,10 +6,10 @@ Welcome to the Openshift Advanced Troubleshooting Labs Git repository! The labs 
 
 ## Labs Overview
 
-# Lab1-OVN-kubernetes: This lab covers OVN/OVS snadbox and tasks to help you understand virtual networking stack of OpenShift
+1. Lab1-OVN-kubernetes: This lab covers OVN/OVS snadbox and tasks to help you understand virtual networking stack of OpenShift
 
-# Lab2-Securing-Service-Traffic:  In this lab, you will learn how to secure pods internal service traffic in an OpenShift cluster.
+2. Lab2-Securing-Service-Traffic:  In this lab, you will learn how to secure pods internal service traffic in an OpenShift cluster.
 
-# Lab3-Restore-Master-Node: This lab illustrates the process of restoring a failed master node in an OpenShift cluster.
+3. Lab3-Restore-Master-Node: This lab illustrates the process of restoring a failed master node in an OpenShift cluster.
 
-# Lab4-Restore-ETCD: In this lab, you will learn how to perform an ETCD restore in an OpenShift cluster.
+4. Lab4-Restore-ETCD: In this lab, you will learn how to perform an ETCD restore in an OpenShift cluster.
