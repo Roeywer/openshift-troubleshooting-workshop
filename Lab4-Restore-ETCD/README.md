@@ -20,6 +20,15 @@ export KUBECONFIG=/root/ocp-install/install/auth/kubeconfig
 ```
 This will allow you to interact with your cluster using the correct configuration.
 
+4. Create an ETCD Backup
+ Follow the instructions in the [OpenShift Documentation](https://docs.openshift.com/container-platform/4.12/backup_and_restore/control_plane_backup_and_restore/backing-up-etcd.html) to create a backup of your ETCD data. Ensure that you have a valid backup file in your desired location, for example:
+```bash
+sh-4.4# /usr/local/bin/cluster-backup.sh /home/core/backup
+sh-4.4# ls -l /home/core/backup
+total 93660
+-rw-------. 1 root root 95821856 Jul 20 08:53 snapshot_2023-07-20_085308.db
+-rw-------. 1 root root    78165 Jul 20 08:53 static_kuberesources_2023-07-20_085308.tar.gz
+```
 
 ### Workshop Steps
 
