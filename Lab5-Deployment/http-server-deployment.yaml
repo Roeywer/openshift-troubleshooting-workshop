@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: http-server
+  labels:
+    app: front-end
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: front-end
+  template:
+    metadata:
+      labels:
+        app: front-end
+    spec:
+      nodeSelector: 
+        node-role.kubernetes.io/work: ""
+      containers:
+      - name: http-server-container
+        image: quay.io/imaymon/http-server:v1
+        ports:
+        - containerPort: 8080
