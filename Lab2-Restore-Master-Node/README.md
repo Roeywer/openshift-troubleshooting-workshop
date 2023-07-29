@@ -2,19 +2,26 @@
 
 Welcome to the OpenShift Master Restore Workshop! In this workshop, you will learn how to restore the control plane components of an OpenShift cluster in case of a disaster scenario. This workshop assumes that you have an admin access to OpenShift cluster.
 
-### Prerequisites
-1. You have admin access to an OpenShift cluster
-   
-2. Confirm the cluster's health by logging in to the bastion server and running the following command to check the status of cluster operators:
+### How to Get Started
+1. Accessing the Lab Environment:
 
+* Use your student<x> user/password to SSH to the bastion node:
 ```bash
-oc get co
+$ ssh student<x>@172.28.22.125
 ```
 
-3. Use the installation kubeconfig file by running the following command:
+* Get admin access to the cluster by running:
 ```bash
-export KUBECONFIG=/root/ocp-install/install/auth/kubeconfig
+$ export KUBECONFIG=~/ocp-install/auth/kubeconfig
 ```
+* If necessery use the ssh-key file to ssh to the OCP cluster nodes:
+```bash
+$ ssh -i ~/ocp-install/ssh-key core@<Node-IP>
+```
+* Before starting check the clusterOperator status by running:
+  ```bash
+  $ oc get co
+  ```
 
 ### Restore Process
 
