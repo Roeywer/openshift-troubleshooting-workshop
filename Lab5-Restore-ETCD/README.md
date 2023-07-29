@@ -14,15 +14,18 @@ oc get co
 ```
 Ensure that all ClusterOperators are in the "Available" state before proceeding.
 
-3. et the installation kubeconfig file as the active configuration by running the following command:
+3. get the installation kubeconfig file as the active configuration by running the following command:
 ```bash
-export KUBECONFIG=/root/ocp-install/install/auth/kubeconfig
+export KUBECONFIG=~/ocp-install/auth/kubeconfig
 ```
 This will allow you to interact with your cluster using the correct configuration.
 
 4. Create an ETCD Backup
  Follow the instructions in the [OpenShift Documentation](https://docs.openshift.com/container-platform/4.12/backup_and_restore/control_plane_backup_and_restore/backing-up-etcd.html) to create a backup of your ETCD data. Ensure that you have a valid backup file in your desired location, for example:
 ```bash
+bastion-server# ssh -i ~/ssh-key core@<Master-Node-IP>
+
+sh-4.4# sudo su
 sh-4.4# /usr/local/bin/cluster-backup.sh /home/core/backup
 sh-4.4# ls -l /home/core/backup
 total 93660
