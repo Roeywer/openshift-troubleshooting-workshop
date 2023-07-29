@@ -29,20 +29,21 @@ This workshop demonstrates how to annotate a service in an OpenShift cluster wit
 
 
 ### Step 2: Deploy HTTP/HTTPS Simple Server
-1. Run the following command to deploy the HTTP/HTTPS simple server:
+1. Deploy the HTTP/HTTPS simple server and service:
 
 ```bash
 oc apply -f http-server.yaml
+oc apply -f http-server-service.yaml
 ```
 
 
 ### Step 3: Deploy the Curl Client
-1. Run the following command to deploy the curl client:
+1. Deploy the curl client:
 
 ```bash
 oc apply -f curl-client.yaml
 ```
-2. Run curl command from client to server
+2. Run curl command from client to server using the service name and https port
    - Did the curl worked using the https endpoint ?
   
 

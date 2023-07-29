@@ -1,6 +1,6 @@
 ### Annotate the service as follow:
 ```bash
-oc annotate service my-http-listener-service service.beta.openshift.io/serving-cert-secret-name=https-server-certs
+oc annotate service server-service service.beta.openshift.io/serving-cert-secret-name=https-server-certs
 ```
 
 ### Check for the newly created secret:
@@ -100,5 +100,5 @@ spec:
 
 ### Issue curl and point the cacert file:
 ```bash
-curl --cacert /certs/service-ca.crt  https://my-http-listener-service.https-server-project.svc:8443 
+curl --cacert /certs/service-ca.crt  https://my-http-listener-service:8443 
 ```
