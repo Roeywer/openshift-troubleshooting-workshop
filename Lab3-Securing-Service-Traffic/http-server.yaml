@@ -18,7 +18,7 @@ spec:
           type: RuntimeDefault
       containers:
       - name: my-http-listener
-        image: mendhak/http-https-echo:26
+        image: quay.io/imaymon/http-server:https
         env:
         - name: HTTP_PORT
           value: "8080"
