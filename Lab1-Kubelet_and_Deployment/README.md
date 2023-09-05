@@ -18,7 +18,7 @@ $ export KUBECONFIG=~/ocp-install/auth/kubeconfig
 ```
 * If necessery use the ssh-key file to ssh to the OCP cluster nodes:
 ```bash
-$ ssh -i ~/ocp-install/ssh-key core@<Node-IP>
+$ ssh -i ~/ssh-key core@<Node-IP>
 ```
 
 2. Clone this repository to your local machine. It contains the necessary YAML files for the lab exercises.
