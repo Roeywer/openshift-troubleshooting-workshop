@@ -69,6 +69,13 @@ You will work with a sample application designed to run in an OpenShift cluster.
      
      Use the `curl-client` from the previous task to connect to the production HTTP server and verify the response.
 
+     
+   - Ensure it returns the message:
+     
+     ```text
+     Congratulations!! The deployment is working!
+     ```
+
 ---
 
 ## Tips
