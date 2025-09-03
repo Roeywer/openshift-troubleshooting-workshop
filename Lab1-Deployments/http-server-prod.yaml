@@ -2,7 +2,6 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: http-server-prod
-  namespace: http-prod
   labels:
     app: front-end-prod
 spec:
