@@ -1,17 +1,38 @@
-# Openshift Advanced Troubleshooting Labs
+# OpenShift Advanced Troubleshooting Workshop
 
-Welcome to the Openshift Advanced Troubleshooting Labs Git repository! The labs are part of Red Hat's advanced troubleshooting workshop and are designed to help you gain expertise in troubleshooting advanced scenarios in an OpenShift environment. Each lab focuses on a specific aspect of troubleshooting and provides step-by-step instructions to guide you through the process.
+Welcome to the OpenShift Advanced Troubleshooting Workshop! This repository contains hands-on labs designed to help you diagnose and resolve common issues encountered when deploying and securing applications on OpenShift.
 
-[Openshift Advance Troubleshooting presentation link](https://docs.google.com/presentation/d/1ILZm8cXHuufuVb8Qw3wEeiCD-vryouNUUvmSm97sXq4/edit?usp=sharing)
+## Lab Structure
 
-## Labs Overview
+- **Lab1-Deployments**: Practice troubleshooting application deployments, resolving issues, and validating successful application rollout.
+- **Lab2-Securing-Service-Traffic**: Learn how to secure service traffic using OpenShift service certificates, mount secrets/configmaps, and validate secure connectivity.
 
-1. Lab1-Kubelet_and_Deployment: This lab will teach you how to debug kubelet errors and application deployment misconfiguration. 
+Each lab contains a `README.md` with step-by-step instructions and YAML manifests for the exercises.
 
-2. Lab2-OVN-kubernetes: This lab covers OVN/OVS snadbox and tasks to help you understand virtual networking stack of OpenShift
+## Getting Started
 
-3. Lab3-Securing-Service-Traffic:  In this lab, you will learn how to secure pods internal service traffic in an OpenShift cluster.
+1. **Clone this repository:**
+   ```bash
+   git clone <this-repo-url>
+   cd Openshift-Advance-Troubleshooting
+   ```
+2. **Follow the instructions in each lab's README.md**
+   - Start with `Lab1-Deployments/README.md`
+   - Proceed to `Lab2-Securing-Service-Traffic/README.md`
 
-4. Lab4-Restore-Master-Node: This lab illustrates the process of restoring a failed master node in an OpenShift cluster.
+## Prerequisites
 
-5. Lab5-Restore-ETCD: In this lab, you will learn how to perform an ETCD restore in an OpenShift cluster.
+- Access to an OpenShift cluster
+- `oc` CLI installed and logged in
+- Basic knowledge of Kubernetes and OpenShift concepts
+
+## Example: Creating a New Project
+
+To create a new project using your OpenShift username:
+```bash
+oc new-project http-server-dev-$(oc whoami)
+```
+
+## License
+
+This workshop is for educational purposes.

@@ -1,0 +1,46 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: http-server-prod
+  namespace: http-prod
+  labels:
+    app: front-end-prod
+spec:
+  selector:
+    matchLabels:
+      app: front-end-prod
+  replicas: 1
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: front-end-prod
+    spec:
+      containers:
+        - name: http-server-container
+          image: 'quay.io/imaymon/http-server:v1'
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: http-server-service
+spec:
+  selector:
+    app: front-end-prod
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: deny-by-default
+spec:
+  podSelector: {}
+  ingress: []

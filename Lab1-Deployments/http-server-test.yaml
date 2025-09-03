@@ -21,3 +21,16 @@ spec:
         image: quay.io/imaymon/http-server:v1
         ports:
         - containerPort: 8080
+        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: http-server-service
+spec:
+  selector:
+    app: back-end
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80

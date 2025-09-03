@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-http-listener
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-http-listener
+  template:
+    metadata:
+      labels:
+        app: my-http-listener
+    spec:
+      containers:
+      - name: my-http-listener
+        image: mendhak/http-https-echo:26
+        env:
+        - name: HTTP_PORT
+          value: "8080"
+        - name: HTTPS_PORT
+          value: "8443"
+        volumeMounts:
+        - name: cert-volume
+          mountPath: /app/fullchain.pem
+          subPath: tls.crt
+        - name: cert-volume
+          mountPath: /app/privkey.pem
+          subPath: tls.key
+        ports:
+        - containerPort: 8080
+          name: http
+        - containerPort: 8443
+          name: https
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+              - ALL
+      volumes:
+      - name: cert-volume
+        secret:
+          secretName: https-server-certs
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault

@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: curl-pod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: curl-pod
+  template:
+    metadata:
+      labels:
+        app: curl-pod
+    spec:
+      containers:
+      - name: curl-container
+        image: curlimages/curl
+        command: ["sleep", "infinity"]
+        volumeMounts:
+        - name: ca-volume
+          mountPath: /certs
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop: ["ALL"]
+          runAsNonRoot: true
+          seccompProfile:
+            type: "RuntimeDefault"
+      volumes:
+      - name: ca-volume
+        configMap:
+          name: openshift-service-ca.crt
+          items:
+          - key: service-ca.crt
+            path: service-ca.crt
