@@ -53,10 +53,9 @@ You will work with a sample application designed to run in an OpenShift cluster.
 4. **Production Deployment**
 
    - **Create a Production Project**
-     
-     ```sh
-     oc new-project http-server-prod-$(oc whoami)
-     ```
+       ```
+        Change to your prod project $ oc project http-server-prod-$(oc whoami)
+       ```
    - **Deploy to Production**
      
      Apply the production YAML file:
