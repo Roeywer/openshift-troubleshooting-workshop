@@ -1,3 +1,4 @@
 create-user-projects.sh
 deny-all-network-policy.yaml
 users.txt
+users.htpasswd
