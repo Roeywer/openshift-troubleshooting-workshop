@@ -36,3 +36,9 @@ oc new-project http-server-dev-$(oc whoami)
 ## License
 
 This workshop is for educational purposes.
+
+## Openshift Cluster
+```
+https://console-openshift-console.apps.cluster-gjtcs.gjtcs.sandbox405.opentlc.com
+https://api.cluster-gjtcs.gjtcs.sandbox405.opentlc.com:6443
+```
